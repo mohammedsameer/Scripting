@@ -1,0 +1,63 @@
+Currently, when zuora license expires on 05/31, certain functionality in CS app concerning pro-customers will cease to work due to baked in zuora dependency. The specific functionality includes:
+a) Cancel Account - user-requested b) Cancel Account - Non-payment c) Change Trial Expiration Date  d) Activate Suspended/Cancelled Account
+These admin features can be accessed via "Pro->Manage Customers->Edit Billing" option within CS app.
+
+This fix removes the zuora dependency to enable successful working of above mentioned functionality.
+Files changed:
+1. editBilling.gsp: Removed the "Start New Paid Subscription" option from drop down as its no longer applicable
+2. ProCustomerManager.java: Removed the salesforce email trigger(will be covered in BILL-833) & zuora reference
+3. ProController.groovy: Remove unused input parameters
+4. ZuoraBilling.java: Removed the zuora reference while canceling, activating , updating expiration date & unused method
+5. ZuoraBillingTest.java: Updated to support validation of a cancelled credit card customer with no payment/credit card setup
+
+Successfully ran ZuoraBillingTest. Additionally the following acceptance tests were successfully run from local CS app:
+
+a) Cancel Account - user-requested:
+  i) Past/Current Date: When applied on an active customer with active/new billing state, successfully updates billing state as cancelled & updates client status as inactive
+  ii) Future Date: When applied on on an active customer with active/new billing state, shows an error message "Cannot cancel in the future!!!!."
+
+b) Cancel Account - non-payment:
+  i) Past/Current Date: When applied on an active customer with active/new billing state, successfully updates billing state as uncollectable & updates client status as inactive
+  ii) Future Date: When applied on an active customer with active/new billing state, shows an error message "Cannot cancel in the future!!!!."
+
+c) Change Trial Expiration Date:
+  i) Past/Current Date: When applied on an active customer with active/new billing state, shows an error message "Cannot extend trial in the past. Select a future date."
+ ii) Future Date: When applied on an active customer with active/new billing state, successfully updates trial end date with user input
+
+d) Activate Account(previously Activate Suspended/Cancelled Account):
+For Credit Card Customer:
+i) For customer with SUSPENDED/CANCELED/NEW/CANCELED/UNCOLLECTED billing status & payment setup: This action activates the customer, by updating billing state to active and all client statuses to active 
+ii) For customer with SUSPENDED/CANCELED/NEW/CANCELED/UNCOLLECTED billing status & no payment setup: This action activates the customer, by updating billing state to new(in trial) and all client statuses to active
+iii) For customer with ACTIVE billing status: No change
+For Net15/30 Customer:
+i) For customer with SUSPENDED/CANCELED/NEW/CANCELED/UNCOLLECTED billing status: This actions activates the customer, by updating billing state to active and all client statuses to active 
+ii) For customer with ACTIVE billing status: No change
+
+e) "Suspend Account - non payment"
+ i) When applied on an active customer with non-cancelled billing status, successfully updates only the billing status as suspended
+ ii) When applied on an active customer with cancelled billing status, shows an error message "Cannot suspened a cancelled account."
+
+Additionally, validated the working of these updates in tandem with marin app:
+For credit card & net 15/30 customer:
+a) Customers with billing status CANCELED/SUSPENDED/UNCOLLECTABLE attempting to access marin app are prompted with error page
+b) Customers with billing status ACTIVE can successfully access marin app
+c) Customers with billing status NEW (in trial) with future trial end date can successfully access marin app
+d) Customers with billing status NEW (in trial) with past trial end date attempting to access marin app is prompted with billing info page
+
+
+
+*Queries:
+select * from marin_common.customers where customer_id in (1516);
+
+select * from marin.clients where customer_id in (1516);
+
+select * from marin_common.billing_info  where billing_info_id in (1740);
+
+select * from marin_common.users;
+
+
+*Issue:
+
+
+bill820invoiced@marinsoftware.com
+bill820creditcard@marinsoftware.com

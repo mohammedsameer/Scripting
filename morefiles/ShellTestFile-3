@@ -1,0 +1,21 @@
+confirm clean dir
+svn st
+svn up
+svn merge ^/branches/iteration-0064/ .
+mvn marin:update-versions -DnewVersion=billing-i63-simplify-pro-access-logic-SNAPSHOT
+svn st
+svn commit -m "merged iteration-0064 into my billing-i63-simplify-pro-access-logic using the command: svn merge ^/branches/iteration-0064/ ."
+
+
+Q's:
+1. pom version: billing-i61-snapshot vs/ it62 snapshot daily conflict
+
+* Handy:
+svn merge -c -<revision> .
+touch files*
+svn revert files*
+svn resolved <file>
+
+NEW
+NEW
+NEW
