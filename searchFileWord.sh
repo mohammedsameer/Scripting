@@ -3,7 +3,7 @@
 #c :word count
 #r :recurrsive
 #w :word match
-echo "Please enter word to search in ShellTestFile"
-read input
+echo "Please enter word to be searched in shell file"
+read word
 
-grep $input -riwc  --exclude="*\.git*" .
+grep $word -irc --include="*.sh" .
