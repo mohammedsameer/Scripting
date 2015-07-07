@@ -1,0 +1,13 @@
+hello.sh : A simple hello world
+helloArgs.sh : A simple hello with an user input
+loop.sh : Looping using for & while loops
+arrays.sh : Creating & manipulating arrays
+searchFileWord.sh : Searches word recursively in the .sh files of directory
+searchFileWordPrint.sh : Searches word recursively in the .sh files of directory & prints the line of occurance
+searchFiles.sh : Finds all .sh files upto input maxDepth
+functions.sh : Function & there invocation using case statement based on user input
+
+TestData for file search/manipulation:
+files : List of files
+moreFiles : List of more files
+
