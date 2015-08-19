@@ -6,7 +6,7 @@ searchFileWord.sh : Searches word recursively in the .sh files of directory
 searchFileWordPrint.sh : Searches word recursively in the .sh files of directory & prints the line of occurance
 searchFiles.sh : Finds all .sh files upto input maxDepth
 functions.sh : Function & there invocation using case statement based on user input
-alias.sh: Alias creator usage ./alias.sh $alias_name $alias_loc
+alias.sh: Alias creator. Takes two input arguments i)alias name ii)alias location
 
 TestData for file search/manipulation:
 files : List of files

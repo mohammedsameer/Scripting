@@ -1,8 +1,14 @@
 #!/bin/bash
-name=$1
-loc=$2
+
+echo "Please enter alias name"
+read name
+echo "Please enter alias location"
+read loc
 
 echo "Adding an alias"
-echo "Alias name:"$name
-echo "Alias loc:"$loc
-echo "alias $name='cd $loc'" >> ~/.bash_profile
+if [ ! -z "$name" -a ! -z "$loc" ]
+then
+	echo "alias $name='cd $loc'" >> ~/.bash_profile
+else
+	echo "Please enter alias name and location"
+fi
