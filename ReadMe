@@ -2,9 +2,8 @@ hello.sh : A simple hello world
 helloArgs.sh : A simple hello with an user input
 loop.sh : Looping using for & while loops
 arrays.sh : Creating & manipulating arrays
-searchFileWord.sh : Searches word recursively in the .sh files of directory
-searchFileWordPrint.sh : Searches word recursively in the .sh files of directory & prints the line of occurance
-searchFiles.sh : Finds all .sh files upto input maxDepth
+searchFiles.sh : Finds all files with a given in a specified directory. Takes 
+		 two arguments a)file name b) file dir
 functions.sh : Function & there invocation using case statement based on user input
 alias.sh: Alias creator. Takes two input arguments i)alias name ii)alias location
 
