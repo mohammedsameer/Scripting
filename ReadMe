@@ -3,7 +3,7 @@ helloArgs.sh : A simple hello with an user input
 loop.sh : Looping using for & while loops
 arrays.sh : Creating & manipulating arrays
 searchFiles.sh : Finds all files with a given in a specified directory. Takes 
-		 two arguments a)file name b) file dir
+		 two arguments i)file name ii) file dir
 functions.sh : Function & there invocation using case statement based on user input
 alias.sh: Alias creator. Takes two input arguments i)alias name ii)alias location
 
