@@ -7,6 +7,7 @@ searchFiles.sh : Finds all files with a given in a specified directory. Takes
 functions.sh : Function & there invocation using case statement based on user input
 alias.sh: Alias creator. Takes two input arguments i)alias name ii)alias location
 findLargestFile.sh: Last n(input argument) large files in current directory
+searchText.sh: Search input text in input dir
  
 TestData for file search/manipulation:
 files : List of files
