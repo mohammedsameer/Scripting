@@ -1,8 +1,8 @@
 #!/bin/bash
 echo "Please enter choice"
 read input
-if [ $input -eq 1 ]; then
-	echo 'I am in if block'
+if [ $input -ne 1 ]; then
+	echo 'Input is not 1'
 else
-	echo 'I am in else block'
+	echo 'Input is 1'
 fi

@@ -8,7 +8,9 @@ functions.sh : Function & there invocation using case statement based on user in
 alias.sh: Alias creator. Takes two input arguments i)alias name ii)alias location
 findLargestFile.sh: Last n(input argument) large files in current directory
 searchText.sh: Search input text in input dir
- 
+redirectStdIn: Redirect from standard input stream 
+redirectStdOut: Redirect to standard output stream 
+
 TestData for file search/manipulation:
 files : List of files
 moreFiles : List of more files

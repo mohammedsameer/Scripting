@@ -1,0 +1,11 @@
+total 80
+-rw-r--r--  1 msameer  GLOBAL\Domain Users    68 Dec 25 13:10 1
+-rw-r--r--  1 msameer  GLOBAL\Domain Users  4741 Aug 18 20:36 ShellTestFile-1
+-rw-r--r--  1 msameer  GLOBAL\Domain Users  2751 Jun 14  2015 ShellTestFile-2
+-rw-r--r--  1 msameer  GLOBAL\Domain Users   484 Jun 14  2015 ShellTestFile-3
+-rw-r--r--  1 msameer  GLOBAL\Domain Users   218 Jan 11 20:01 annoying.txt
+-rw-r--r--  1 msameer  GLOBAL\Domain Users    35 Jan 11 20:41 names.txt
+-rw-r--r--  1 msameer  GLOBAL\Domain Users     0 Jan 11 20:53 output.txt
+-rw-r--r--  1 msameer  GLOBAL\Domain Users   344 Dec 30 13:14 sample.txt
+-rw-r--r--  1 msameer  GLOBAL\Domain Users    68 Dec 25 13:10 testin.sh
+-rw-r--r--  1 msameer  GLOBAL\Domain Users    68 Dec 30 13:02 testout.sh

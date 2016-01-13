@@ -1,12 +1,14 @@
 #!/bin/bash
-globalName="Sameer"
+name=Sameer
+
 function hello {
-local localName="Samrah"
+local name="Samrah"
 echo "Local"
-echo Hello $localName
+echo Hello $name
 }
+
 hello
 echo "Global"
-echo Hello $globalName
+echo Hello $name
 
 

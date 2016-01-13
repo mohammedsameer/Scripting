@@ -5,9 +5,9 @@ read name
 echo "Please enter alias location"
 read loc
 
-echo "Adding an alias"
-if [ ! -z "$name" -a ! -z "$loc" ]
+if [ -n "$name" -a -n "$loc" ];
 then
+	echo "Adding an alias"
 	echo "alias $name='cd $loc'" >> ~/.bash_profile
 else
 	echo "Please enter alias name and location"
