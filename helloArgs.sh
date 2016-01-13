@@ -1,8 +1,8 @@
 #!/bin/bash
 echo "Please enter choice"
 read input
-if [ $input -ne 1 ]; then
-	echo 'Input is not 1'
+if [[ $input =~ ^[0-9]{1,}$ ]]; then
+	echo 'Input is number'
 else
-	echo 'Input is 1'
+	echo 'Input is non-number'
 fi
