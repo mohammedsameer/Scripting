@@ -1,17 +1,14 @@
-hello.sh : A simple hello world
-helloArgs.sh : A simple hello with an user input
-loop.sh : Looping using for & while loops
-arrays.sh : Creating & manipulating arrays
-searchFiles.sh : Finds all files with a given in a specified directory. Takes 
+hello.sh: A simple hello world
+helloArgs.sh: A simple hello with an user input
+loop.sh: Looping using for & while loops
+arrays.sh: Creating & manipulating arrays
+searchFiles.sh: Finds all files with a given in a specified directory. Takes
 		 two arguments i)file name ii) file dir
-functions.sh : Function & there invocation using case statement based on user input
+functions.sh: Function & there invocation using case statement based on user input
 alias.sh: Alias creator. Takes two input arguments i)alias name ii)alias location
 findLargestFile.sh: Last n(input argument) large files in current directory
 searchText.sh: Search input text in input dir
-redirectStdIn: Redirect from standard input stream 
-redirectStdOut: Redirect to standard output stream 
-
-TestData for file search/manipulation:
-files : List of files
-moreFiles : List of more files
-
+redirectStdIn.sh: Redirect from standard input stream
+redirectStdOut.sh: Redirect to standard output stream
+padding.sh: Explore number padding
+backtick.sh: Uses backtick to find 3 largest files in curr directory
