@@ -1,31 +1,20 @@
-#!/bin/bash
-function bash {
- echo "Welcome to bash";
+masterAge() {
+ age=30
+ echo $age
 }
-function perl {
- echo "Welcome to perl";
-}
-function java {
- echo "Welcome to java";
-}
-function python {
- echo "Welcome to python";
+otherAge() {
+ age=35
+ echo $age
 }
 
-echo "What is your preferred programming / scripting language"
-echo "1) bash"
-echo "2) perl"
-echo "3) java"
-echo "4) python"
-echo "5) I do not know !"
-read id;
-#simple case bash structure
-# note in this case $case is variable and does not have to
-# be named case this is just an example
-case $id in
-    1) bash;;
-    2) perl;;
-    3) java;;
-    4) python;;
-    *) exit
-esac 
+name() {
+ if [[ ! -z $1 && $1 = "Sameer" ]]; then
+     echo "Welcome master. You are $(masterAge) and young"
+ elif [[ ! -z $1 && $1 != "Sameer" ]]; then
+     echo "Welcome $1. We have determined your age as $(otherAge)"
+ else
+     echo "Usage ./name.sh <name>"
+ fi
+}
+
+$@
