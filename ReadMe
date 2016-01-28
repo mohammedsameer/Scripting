@@ -13,4 +13,5 @@ padding.sh: Explore number padding
 backtick.sh: Uses backtick to find 3 largest files in curr directory
 braches.sh: Use cases of braces usage
 squareBrackets.sh: Use cases of square brackets usage
-inputArgs.sh : How to pass in and use input args
+inputArgs.sh: How to pass in and use input args
+jqtest.sh: Parsing json files
