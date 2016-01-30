@@ -15,3 +15,4 @@ braches.sh: Use cases of braces usage
 squareBrackets.sh: Use cases of square brackets usage
 inputArgs.sh: How to pass in and use input args
 jqtest.sh: Parsing json files
+deployBpsVm: Service deploy script

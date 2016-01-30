@@ -1,0 +1,6 @@
+myFunc() {
+local cwd=${$1}
+echo $cwd
+}
+
+myFunc
