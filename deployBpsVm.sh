@@ -1,5 +1,5 @@
 #!/bin/bash
-BPS_HOME_DIRECTORY=/home/marin/billing/billing_pull_servicedd
+BPS_HOME_DIRECTORY=/home/marin/billing/billing_pull_service
 JAVA_8_HOME=/usr/lib/jvm/java-8-oracle
 
 extractTarFile() {
@@ -17,7 +17,7 @@ setJavaHome() {
  export $JAVA_HOME=$JAVA_8_HOME
 }
 
-start() {
+startService() {
  echo "Starting billing pull service"
  start_output=`./billing-pull-service.sh restart`
  echo $start_output
@@ -26,11 +26,11 @@ start() {
 deploy() {
 setJavaHome
 extractTarFile $1
-start
+startService
 }
 
 deployBps() {
-if [ ! -z "$1 ]
+if [ ! -z "$1" ]
 then
  echo "Begining deployment"
  deploy $1
