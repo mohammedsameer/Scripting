@@ -4,7 +4,7 @@ JAVA_8_HOME=/usr/lib/jvm/java-8-oracle
 
 extractTarFile() {
 echo "Extracting $1 file"
-cd $BPS_HOME_DIRECTORY;rm -rf *;cp $1 .;tar -xvf $1;
+cd $BPS_HOME_DIRECTORY;rm -rf *;cp $1 .;tar -xf billing-pull-service.tar.gz;
 islogDir=`ls -l| grep -i logs`
 if [ -z "$islogDir" ]
 then
@@ -14,7 +14,7 @@ fi
 
 setJavaHome() {
  echo "Setting java home"
- export $JAVA_HOME=$JAVA_8_HOME
+ export JAVA_HOME=$JAVA_8_HOME
 }
 
 startService() {
